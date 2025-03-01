@@ -1,0 +1,293 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Fortune cookie specific colors */
+    --fortune-primary: 32 75% 94%;
+    --fortune-secondary: 32 95% 84%;
+    --fortune-accent: 32 75% 60%;
+    --fortune-paper: 36 100% 99%;
+    --fortune-text: 240 5.9% 10%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Fortune cookie specific colors */
+    --fortune-primary: 32 30% 20%;
+    --fortune-secondary: 32 30% 15%;
+    --fortune-accent: 32 75% 60%;
+    --fortune-paper: 36 30% 92%;
+    --fortune-text: 210 40% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(2deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+@keyframes crack {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.02) rotate(-4deg);
+  }
+  60% {
+    transform: scale(1.02) rotate(4deg);
+  }
+  80% {
+    transform: scale(1.01) rotate(-2deg);
+  }
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes paper-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(15px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-crack {
+  animation: crack 0.6s ease-in-out forwards;
+}
+
+.animate-paper-reveal {
+  animation: paper-reveal 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.7s ease-out forwards;
+}
+
+.cookie-half {
+  position: absolute;
+  width: 120px;
+  height: 80px;
+  cursor: pointer;
+  transition: transform 0.6s ease-in-out;
+  z-index: 5;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f8e3bd;
+  background-image: url("/lovable-uploads/1bb63b5f-a692-4bb0-874e-dea0e124feea.png");
+  background-size: cover;
+}
+
+.cookie-left {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-100%) rotate(25deg);
+  transform-origin: right center;
+  width: 100px;
+  height: 200px;
+  background-color: #e3a663;
+  border-radius: 7em 1em 1em 7em / 50%;
+  clip-path: polygon(0% 0%, 68% 0%, 100% 30%, 100% 100%, 0% 100%);
+  box-shadow: 0 0 0 inset, 0 0 0 inset, 0.5em 0.2em 0 #fff6 inset,
+    -0.75em 0 0 #0002 inset;
+}
+
+.cookie-right {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-80%) rotate(155deg) scaleY(-100%);
+  transform-origin: right center;
+  width: 100px;
+  height: 200px;
+  background-color: #e3a663;
+  border-radius: 7em 1em 1em 7em / 50%;
+  clip-path: polygon(0% 0%, 68% 0%, 100% 30%, 100% 100%, 0% 100%);
+  box-shadow: 0 0 0 inset, 0 0 0 inset, 0.5em 0.2em 0 #fff6 inset,
+    -0.75em 0 0 #0002 inset;
+}
+
+.cookie-left-open {
+  transform: translateX(-240%) rotate(35deg);
+}
+
+.cookie-right-open {
+  transform: translateX(40%) rotate(145deg) scaleY(-100%);
+}
+
+.fortune-paper-container {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  animation: paper-reveal 0.8s ease-out forwards;
+}
+
+.fortune-paper {
+  background-color: hsl(var(--fortune-paper));
+  color: hsl(var(--fortune-text));
+  padding: 1rem;
+  border-radius: 0.375rem;
+  box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.1);
+  max-width: 14rem;
+  min-width: 10rem;
+  transform-origin: center top;
+}
+
+.fortune-cookie {
+  background: linear-gradient(
+    145deg,
+    hsl(var(--fortune-primary)),
+    hsl(var(--fortune-secondary))
+  );
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1),
+    0 3px 10px -3px rgba(0, 0, 0, 0.05),
+    inset 0 -5px 10px -5px rgba(0, 0, 0, 0.1);
+}
+
+.fortune-cookie-opened {
+  background: linear-gradient(
+    145deg,
+    hsl(var(--fortune-secondary)),
+    hsl(var(--fortune-primary))
+  );
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.15),
+    0 5px 15px -5px rgba(0, 0, 0, 0.1),
+    inset 0 -5px 10px -5px rgba(0, 0, 0, 0.15);
+}
+
+.fortune-paper {
+  background-color: hsl(var(--fortune-paper));
+  color: hsl(var(--fortune-text));
+  box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.1);
+}
