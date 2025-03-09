@@ -2,7 +2,7 @@ import { FortuneCard } from "@/components/FortuneCard";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-amber-50 to-amber-100 p-4">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b overflow-hidden from-amber-50 to-amber-100 p-4">
       <div className="w-full max-w-lg">
         {/* Page Header */}
         <img
@@ -41,7 +41,7 @@ const Index = () => {
       <img
         src="/images/infinity-logo.png"
         alt="Fortune Cookie"
-        className="mx-auto mb-4 h-24 w-auto drop-shadow-lg"
+        className="mx-auto my-4 h-24 w-auto drop-shadow-lg"
       />
     </div>
   );
